@@ -4,6 +4,6 @@ var express = require('express');
 
 var app = express();
 
-app.get('/', (req, res) => res.send('Hello AHHHH hhh World!'))
+app.get('/', (req, res) => res.send('Hello AHHHH World!'))
 
 module.exports = app.listen(8080, () => console.log('Example app listening on port 8080!'))
