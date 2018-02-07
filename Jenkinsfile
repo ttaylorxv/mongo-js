@@ -11,7 +11,7 @@ try {
             branch = branch.substring(branch.lastIndexOf("/") + 1)
         }
             
-        if (!branch.equalsIgnoreCase("master")){
+        //if (!branch.equalsIgnoreCase("master")){
         
         stage('checkout-and-test') {
             checkout scm
@@ -28,7 +28,7 @@ try {
         }*/
 
 
-        } else {
+        //} /*else {
         
         
         stage('Build') {
@@ -67,7 +67,7 @@ try {
             openshiftVerifyDeployment depCfg: 'simple-nodejs-dev', verbose: 'false'
             
         } 
-        }
+        }*/
     }
 } catch (err) {
     echo "in catch block"
