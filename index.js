@@ -6,4 +6,4 @@ var app = express();
 
 app.get('/', (req, res) => res.send('Hello New Git Flow World!'))
 
-app.listen(8080, () => console.log('Example app listening on port 8080!'))
+module.exports = app.listen(8080, () => console.log('Example app listening on port 8080!'))
