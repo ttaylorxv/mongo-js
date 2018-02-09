@@ -18,7 +18,7 @@
   "message": "The following service(s) have been created in your project: ${NAME}.\n\nFor more information about using this template, including OpenShift considerations, see https://github.com/openshift/nodejs-ex/blob/master/README.md.",
   "labels": {
       "template": "nodejs-example",
-      "app": "nodejs-example"
+      "app": "${NAME}"
   },
   "objects": [
     {
@@ -243,7 +243,7 @@
       "displayName": "Git Repository URL",
       "description": "The URL of the repository with your application source code.",
       "required": true,
-      "value": "https://github.com/openshift/nodejs-ex.git"
+      "value": "https://github.com/ttaylorxv/nodejs.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",
