@@ -4,9 +4,14 @@ import hudson.model.*
 
 try {
     node {
-       
-        def branch = BRANCH_NAME.toLowerCase();
-        def source = BRANCH_NAME
+       // Read payload which is a submitted JSON request from github and write to temp file
+       sh 'echo "$payload" >> tempGitFile.json'
+       // From the temp file place into variable
+       def fromgithook = readJSON file: 'tempGitFile.json'
+       // find branch name and set to lower case for environment variables
+       def branch = fromgithook.ref
+        /*def branch = BRANCH_NAME.toLowerCase();
+        def source = BRANCH_NAME*/
         if (branch.contains('/')){
             branch = branch.substring(branch.lastIndexOf("/") + 1)
         }
