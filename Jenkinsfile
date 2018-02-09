@@ -14,7 +14,7 @@ try {
         stage('checkout-and-test') {
             checkout scm
       
-            sh """oc process -f nodejs-mongo-jenkinspipe.json -p NAME=$branch -p SOURCE_REPOSITORY_URL=https://github.com/ttaylorxv/nodejs.git -p SOURCE_REPOSITORY_REF=$source -p DATABASE_NAME=$branch -p DATABASE_SERVICE_NAME=$branch-mongodb -lapp=$branch | oc apply -f -"""
+            sh """oc process -f nodejs.json -p NAME=$branch -p SOURCE_REPOSITORY_URL=https://github.com/ttaylorxv/nodejs.git -p SOURCE_REPOSITORY_REF=$source -lapp=$branch | oc apply -f -"""
             //sh """oc create -f nodejs-mongo-jenkinspipe.json"""
             //sh """oc new-app nodejs-mongo-jenkinspipe"""
             //sh """oc start-build $branch""""
