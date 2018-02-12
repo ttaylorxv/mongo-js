@@ -20,7 +20,7 @@ try {
         sh """oc process -f nodejs.json -p NAME=$branch -p SOURCE_REPOSITORY_URL=https://github.com/ttaylorxv/nodejs.git -p SOURCE_REPOSITORY_REF=$source -lapp=$branch | oc apply -f -"""
             //sh """oc create -f nodejs-mongo-jenkinspipe.json"""
             //sh """oc new-app nodejs-mongo-jenkinspipe"""
-            sh """oc start-build $branch""""
+            sh """oc start-build $branch"""
             //sh """oc deploy $branch --latest"""
            
             //openshiftBuild apiURL: '', authToken: '', bldCfg: """$branch""", buildName: '', checkForTriggeredDeployments: 'true', commitID: '', namespace: '', showBuildLogs: 'true', verbose: 'false', waitTime: '', waitUnit: 'sec'
