@@ -13,4 +13,4 @@ describe ('test rest', () => {
       });
   });
 });
-request.close();
+request.server.close();
